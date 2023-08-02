@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Search Results</title>
+</head>
+<body>
+    <h1>Search Results for Playlist: {{ playlist_name }}</h1>
+    <ul>
+        {% for song_title, artist_name, youtube_link in songs_info %}
+            <li>{{ song_title }} - {{ artist_name }} - <a href="{{ youtube_link }}" target="_blank">YouTube Link</a></li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
