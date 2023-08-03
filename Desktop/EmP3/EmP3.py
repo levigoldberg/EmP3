@@ -4,6 +4,7 @@ from spotipy.oauth2 import SpotifyClientCredentials
 from googleapiclient.discovery import build
 from pytube import YouTube
 import os
+import sys  # Import the sys module to access command-line arguments
 
 # Replace YOUR_CLIENT_ID and YOUR_CLIENT_SECRET with your actual credentials
 client_id = "2b4f7f19e9c549c287f35e11889e3ca6"
@@ -70,8 +71,12 @@ def get_song_info(playlist_link):
     return None, None
 
 if __name__ == "__main__":
-    # Ask the user to enter the Spotify playlist link or ID
-    playlist_link = input("Enter the Spotify playlist link or ID: ")
+    # Check if the user provided the Spotify playlist link as a command-line argument
+    if len(sys.argv) != 2:
+        print("Usage: python app.py <Spotify Playlist Link>")
+        sys.exit(1)
+
+    playlist_link = sys.argv[1]
 
     # Get playlist name and song titles and artist names from the Spotify playlist
     playlist_name, songs_info = get_song_info(playlist_link)
