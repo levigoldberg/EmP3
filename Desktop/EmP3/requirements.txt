@@ -2,3 +2,4 @@ names-dataset==3.1.0
 pycountry==22.3.5
 spotipy==2.19.0
 google-api-python-client==2.24.0
+pytube==10.9.0
