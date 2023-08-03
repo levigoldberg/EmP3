@@ -95,3 +95,4 @@ if __name__ == "__main__":
                 print(f"{song_title} - {artist_name} - No YouTube video found for this track.")
     else:
         print("Invalid playlist link. Please enter a valid Spotify playlist link or ID.")
+
